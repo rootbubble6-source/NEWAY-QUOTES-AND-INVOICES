@@ -1,4 +1,3 @@
-cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -429,7 +428,6 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
 <div class="toast" id="toast"></div>
 
 <script>
-// ── CONFIG ──────────────────────────────────────────────
 const CORRECT_PIN = '1234';
 const COMPANY = {
   name:'NEWAY SECURITY (PTY) LTD',reg:'2018/200399/07',
@@ -441,7 +439,6 @@ const COMPANY = {
 
 const SALESPERSONS = ['Thembi Malope','Max Seya','Peace Tibane'];
 
-// ── HARDCODED CLIENTS (from invoice history) ─────────────
 const SEED_CLIENTS = [
   {id:'c001',name:'Dudu Mtshali',company:'Astrol Energy Plaza Management',phone:'082 350 6058 / 013 795 5942',email:'',address:'Acornhoek',seed:true},
   {id:'c002',name:'Engen Bushbuckridge Service Station',company:'Engen Bushbuckridge Service Station',phone:'',email:'',address:'Bushbuckridge',seed:true},
@@ -456,7 +453,6 @@ const SEED_CLIENTS = [
   {id:'c011',name:'SMT',company:'SMT',phone:'',email:'',address:'',seed:true},
 ];
 
-// ── FULL SERVICE CATALOG (from price list PDF) ───────────
 const CATALOG = [
   {cat:'Armed Response & Guarding',items:[
     {name:'Armed Guard – Day Shift Supervisor',price:20000,unit:'month'},
@@ -544,14 +540,12 @@ const CATALOG = [
   ]},
 ];
 
-// ── STATE ────────────────────────────────────────────────
 let nextInv = parseInt(localStorage.getItem('neway_nextInv') || '1000');
 let nextQuo = parseInt(localStorage.getItem('neway_nextQuo') || '7204');
 let docs = JSON.parse(localStorage.getItem('neway_docs') || '[]');
 let currentDoc = null;
 let docTypeChosen = false;
 
-// Merge seed clients with any user-added clients
 function loadClients() {
   const stored = JSON.parse(localStorage.getItem('neway_clients') || '[]');
   const seedIds = SEED_CLIENTS.map(c => c.id);
@@ -563,7 +557,6 @@ function saveClients(clients) {
   localStorage.setItem('neway_clients', JSON.stringify(userClients));
 }
 
-// ── PIN ──────────────────────────────────────────────────
 let pinBuffer = '';
 function pinPress(d) {
   if (pinBuffer.length >= 4) return;
@@ -595,7 +588,6 @@ function lockApp() {
   document.getElementById('pin-screen').classList.add('active');
 }
 
-// ── NAVIGATION ───────────────────────────────────────────
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab-item').forEach(t=>t.classList.remove('active'));
@@ -607,12 +599,10 @@ function showPage(name) {
   if(name==='clients') renderClients();
 }
 
-// ── HELPERS ──────────────────────────────────────────────
 function fmt(n){return'R'+Number(n).toLocaleString('en-ZA',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function today(){const d=new Date();return d.getDate().toString().padStart(2,'0')+'/'+(d.getMonth()+1).toString().padStart(2,'0')+'/'+d.getFullYear();}
 function greet(){const h=new Date().getHours();return h<12?'morning':h<17?'afternoon':'evening';}
 
-// ── HOME ─────────────────────────────────────────────────
 function renderHome() {
   const recent = [...docs].reverse().slice(0,8);
   document.getElementById('page-home').innerHTML = `
@@ -649,7 +639,6 @@ function renderHome() {
     </div>`;
 }
 
-// ── NEW DOC – TYPE PICKER THEN FORM ──────────────────────
 function startDoc(type) {
   const num = type==='invoice'
     ? 'INV-'+String(nextInv).padStart(4,'0')
@@ -661,7 +650,6 @@ function startDoc(type) {
 
 function renderNewPage() {
   if (!docTypeChosen || !currentDoc) {
-    // Show type picker
     document.getElementById('page-new').innerHTML = `
       <div style="font-size:18px;font-weight:600;margin-bottom:6px">New Document</div>
       <div style="font-size:13px;color:var(--text3);margin-bottom:20px">Choose what you want to create</div>
@@ -700,7 +688,6 @@ function renderDocForm() {
       </div>
       <div style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;${isInv?'background:#FFF3E0;color:#E65100':'background:#E8F5E9;color:#1B5E20'}">${isInv?'INVOICE':'QUOTATION'}</div>
     </div>
-
     <div class="form-section">
       <div class="form-section-title">Client details</div>
       <div class="field">
@@ -723,7 +710,6 @@ function renderDocForm() {
           <input type="text" value="${d.date}" id="f-date" oninput="currentDoc.date=this.value"></div>
       </div>
     </div>
-
     <div class="form-section">
       <div class="form-section-title">Line items</div>
       <div class="line-items" id="line-items-container">${renderLineItems()}</div>
@@ -732,20 +718,17 @@ function renderDocForm() {
         Add service / item
       </button>
     </div>
-
     <div class="totals-box">
       <div class="totals-row sub"><span class="tl">Subtotal</span><span class="tr" id="tot-sub">R0.00</span></div>
       <div class="totals-row sub"><span class="tl">VAT (0%)</span><span class="tr">R0.00</span></div>
       <div class="totals-row total"><span class="tl">TOTAL</span><span class="tr" id="tot-total">R0.00</span></div>
     </div>
-
     <div class="form-section">
       <div class="form-section-title">Notes / Footnotes</div>
       <div class="field">
         <textarea placeholder="Payment terms, special conditions, thank you note..." id="f-footnote" oninput="currentDoc.footnote=this.value">${d.footnote}</textarea>
       </div>
     </div>
-
     <button class="gen-btn" onclick="generateDoc()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
       Generate ${isInv?'Invoice':'Quotation'}
@@ -760,7 +743,6 @@ function backToTypePicker() {
   renderNewPage();
 }
 
-// ── CLIENT AUTOCOMPLETE ──────────────────────────────────
 function clientInput(val) {
   currentDoc.client = val;
   currentDoc.clientId = '';
@@ -799,7 +781,6 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// ── LINE ITEMS ───────────────────────────────────────────
 function renderLineItems() {
   if (!currentDoc || !currentDoc.items.length)
     return '<div style="text-align:center;color:var(--text3);font-size:13px;padding:12px 0">No items yet — tap below to add</div>';
@@ -849,7 +830,6 @@ function updateTotals(){
   if(currentDoc) currentDoc.total=t;
 }
 
-// ── CATALOG DRAWER ───────────────────────────────────────
 function openDrawer(){
   document.getElementById('drawer-overlay').classList.add('open');
   document.getElementById('catalog-drawer').classList.add('open');
@@ -881,7 +861,6 @@ function filterCatalog(q){
   document.getElementById('catalog-list').innerHTML=html||'<div style="text-align:center;padding:24px;color:var(--text3);font-size:13px">No results</div>';
 }
 
-// Uses index lookup instead of string interpolation to avoid quote-escaping bugs
 function addItemByIndex(gIdx,iIdx){
   const group=CATALOG[gIdx];
   const item=group.items[iIdx];
@@ -890,13 +869,11 @@ function addItemByIndex(gIdx,iIdx){
   setTimeout(()=>refreshLineItems(),300);
 }
 
-// ── GENERATE ─────────────────────────────────────────────
 function generateDoc(){
   if(!currentDoc.client.trim()){showToast('Please enter a client name');return;}
   if(!currentDoc.items.length){showToast('Add at least one line item');return;}
   currentDoc.total=getTotal();
   currentDoc.id=Date.now().toString();
-  // Save new client if not in list
   const clients=loadClients();
   if(!currentDoc.clientId && currentDoc.client.trim()){
     const exists=clients.find(c=>c.name.toLowerCase()===currentDoc.client.toLowerCase()||c.company.toLowerCase()===currentDoc.client.toLowerCase());
@@ -928,7 +905,6 @@ function printDoc(){
   setTimeout(()=>renderNewPage(),600);
 }
 
-// ── PRINT AREA ───────────────────────────────────────────
 function buildPrintArea(d){
   const rows=d.items.map((it,i)=>`<tr>
     <td>${i+1}</td><td>${it.name}</td>
@@ -994,7 +970,6 @@ function buildPrintArea(d){
     </div>`;
 }
 
-// ── HISTORY ──────────────────────────────────────────────
 function renderHistory(){
   const sorted=[...docs].reverse();
   document.getElementById('page-history').innerHTML=`
@@ -1049,7 +1024,6 @@ function deleteDoc(id){
   renderHistory(); showToast('Document deleted');
 }
 
-// ── CLIENTS PAGE ──────────────────────────────────────────
 function renderClients(){
   const clients=loadClients();
   document.getElementById('page-clients').innerHTML=`
@@ -1092,7 +1066,6 @@ function saveNewClient(){
   ['cm-name','cm-company','cm-phone','cm-email','cm-address'].forEach(id=>document.getElementById(id).value='');
 }
 
-// ── TOAST ─────────────────────────────────────────────────
 function showToast(msg){
   const t=document.getElementById('toast');
   t.textContent=msg; t.classList.add('show');
@@ -1101,8 +1074,3 @@ function showToast(msg){
 </script>
 </body>
 </html>
-HTMLEOF
-echo "Done. Size: $(wc -c < /mnt/user-data/outputs/index.html) bytes"
-Done
-
-You are out of free messages until 8:10 PM
