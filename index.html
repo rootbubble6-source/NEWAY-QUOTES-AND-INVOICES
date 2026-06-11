@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -18,20 +17,19 @@
   --radius:10px;--radius-sm:6px;
   --shadow:0 2px 8px rgba(0,0,0,0.08);
 }
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+body{font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,sans-serif;
   background:var(--light);color:var(--text);font-size:15px;line-height:1.5;
   min-height:100vh;overflow-x:hidden}
 button{font-family:inherit;cursor:pointer;border:none;outline:none}
 input,select,textarea{font-family:inherit;font-size:15px;outline:none}
-
 .screen{display:none;min-height:100vh}
 .screen.active{display:flex;flex-direction:column}
-
 /* PIN */
 #pin-screen{background:var(--dark);align-items:center;justify-content:center}
-.pin-logo{text-align:center;margin-bottom:40px}
-.pin-logo-top{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}
-.pin-logo-name{color:#fff;font-size:26px;font-weight:700}
+.pin-logo{text-align:center;margin-bottom:36px}
+.pin-logo img{width:100px;height:100px;object-fit:contain;border-radius:50%;margin-bottom:10px}
+.pin-logo-top{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px}
+.pin-logo-name{color:#fff;font-size:24px;font-weight:700}
 .pin-logo-sub{color:#888;font-size:12px;margin-top:4px;letter-spacing:1px}
 .pin-label{color:#aaa;font-size:13px;text-align:center;margin-bottom:20px;letter-spacing:1px}
 .pin-dots{display:flex;gap:14px;justify-content:center;margin-bottom:32px}
@@ -45,17 +43,18 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
 .pin-btn .sub{font-size:8px;color:#888;letter-spacing:1px;margin-top:1px}
 .pin-btn.del{font-size:18px}
 .pin-error{color:var(--danger);font-size:13px;text-align:center;margin-top:-20px;margin-bottom:12px;min-height:20px}
-
 /* APP SHELL */
 #app-screen{background:var(--light)}
-.top-bar{background:var(--dark);padding:14px 16px 12px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.top-bar-logo{color:var(--gold);font-size:15px;font-weight:700}
+.top-bar{background:var(--dark);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.top-bar-brand{display:flex;align-items:center;gap:10px}
+.top-bar-logo-img{width:38px;height:38px;object-fit:contain;border-radius:50%}
+.top-bar-text{}
+.top-bar-name{color:var(--gold);font-size:14px;font-weight:700;line-height:1.2}
 .top-bar-sub{color:#777;font-size:11px}
 .top-bar-actions{display:flex;gap:8px}
 .icon-btn{width:36px;height:36px;border-radius:var(--radius-sm);background:var(--dark2);
   color:#aaa;font-size:18px;display:flex;align-items:center;justify-content:center;border:0.5px solid #444}
 .icon-btn:active{background:var(--dark3)}
-
 /* TAB BAR */
 .tab-bar{background:var(--white);border-top:0.5px solid var(--border);
   display:grid;grid-template-columns:repeat(4,1fr);position:sticky;bottom:0;z-index:100}
@@ -63,11 +62,9 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
   gap:3px;color:var(--text3);font-size:10px;font-weight:500;letter-spacing:0.3px;transition:color 0.15s}
 .tab-item.active{color:var(--gold)}
 .tab-item svg{width:22px;height:22px;stroke-width:1.6}
-
 /* PAGES */
 .page{display:none;flex:1;overflow-y:auto;padding:16px}
 .page.active{display:block}
-
 /* HOME */
 .home-greeting{margin-bottom:20px}
 .home-greeting h2{font-size:20px;font-weight:600}
@@ -100,7 +97,6 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
 .badge-inv{background:#FFF3E0;color:#E65100}
 .badge-quo{background:#E8F5E9;color:#1B5E20}
 .empty-state{text-align:center;padding:40px 20px;color:var(--text3)}
-
 /* DOC TYPE PICKER */
 .type-picker{display:flex;flex-direction:column;gap:14px;padding:24px 0}
 .type-pick-btn{background:var(--white);border-radius:var(--radius);padding:22px 18px;
@@ -115,7 +111,6 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
 .type-pick-label{font-size:16px;font-weight:700;color:var(--text)}
 .type-pick-sub{font-size:12px;color:var(--text3);margin-top:3px}
 .type-pick-num{font-size:11px;font-weight:600;color:var(--gold);margin-top:5px}
-
 /* FORM */
 .form-section{background:var(--white);border-radius:var(--radius);padding:14px;
   border:0.5px solid var(--border);margin-bottom:14px}
@@ -129,7 +124,6 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);background:var(--white)}
 .field textarea{resize:vertical;min-height:70px;line-height:1.5}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-
 /* CLIENT AUTOCOMPLETE */
 .client-wrap{position:relative}
 .client-suggestions{position:absolute;top:100%;left:0;right:0;background:var(--white);
@@ -140,7 +134,6 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
 .client-sug-item:active,.client-sug-item:hover{background:var(--lighter)}
 .client-sug-name{font-size:14px;font-weight:500}
 .client-sug-sub{font-size:11px;color:var(--text3);margin-top:1px}
-
 /* LINE ITEMS */
 .line-items{display:flex;flex-direction:column;gap:8px}
 .line-item{background:var(--lighter);border-radius:var(--radius-sm);padding:10px 12px;
@@ -171,7 +164,6 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
   justify-content:center;gap:6px;margin-top:8px}
 .add-item-btn:active{background:var(--lighter)}
 .add-item-btn svg{width:18px;height:18px;stroke:var(--text3);stroke-width:2}
-
 /* TOTALS */
 .totals-box{background:var(--dark);border-radius:var(--radius);padding:14px 16px;margin-bottom:14px}
 .totals-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0}
@@ -181,13 +173,11 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
 .totals-row.total .tr{color:var(--white);font-weight:700;font-size:18px}
 .tl{color:#ccc;font-size:14px}
 .tr{color:var(--white);font-size:14px;font-weight:500}
-
 .gen-btn{width:100%;padding:15px;background:var(--gold);color:var(--dark);font-size:15px;
   font-weight:700;border-radius:var(--radius);letter-spacing:0.3px;margin-bottom:8px;
   display:flex;align-items:center;justify-content:center;gap:8px}
 .gen-btn:active{opacity:0.85;transform:scale(0.98)}
 .gen-btn svg{width:20px;height:20px;stroke:var(--dark);stroke-width:2}
-
 /* CATALOG DRAWER */
 .drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;display:none}
 .drawer-overlay.open{display:block}
@@ -211,7 +201,6 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
 .cat-item-name{font-size:14px;font-weight:500}
 .cat-item-price{font-size:13px;color:var(--gold);font-weight:600}
 .cat-item-unit{font-size:11px;color:var(--text3)}
-
 /* DOC CARDS */
 .doc-card{background:var(--white);border-radius:var(--radius);padding:14px;
   border:0.5px solid var(--border);margin-bottom:12px}
@@ -234,7 +223,6 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
 .doc-action-btn.primary{background:var(--dark);color:var(--gold);border-color:var(--dark)}
 .doc-action-btn.secondary{background:var(--white);color:var(--text)}
 .doc-action-btn svg{width:16px;height:16px;stroke-width:2}
-
 /* CLIENTS PAGE */
 .client-card{background:var(--white);border-radius:var(--radius);padding:14px;
   border:0.5px solid var(--border);margin-bottom:10px}
@@ -247,7 +235,6 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
 .add-client-btn{width:100%;padding:13px;background:var(--dark);color:var(--gold);font-size:14px;
   font-weight:600;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:16px}
 .add-client-btn:active{opacity:0.85}
-
 /* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:300;display:none;align-items:center;justify-content:center;padding:16px}
 .modal-overlay.open{display:flex}
@@ -260,20 +247,25 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
 .modal-btn.primary{background:var(--gold);color:var(--dark)}
 .modal-btn.secondary{background:var(--lighter);color:var(--text);border:1px solid var(--border)}
 .modal-btn:active{opacity:0.85}
-
 /* TOAST */
 .toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);
   background:var(--dark);color:var(--white);padding:10px 18px;border-radius:20px;
   font-size:13px;opacity:0;transition:all 0.3s;z-index:500;pointer-events:none;white-space:nowrap}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
+/* SYNC indicator */
+.sync-badge{font-size:10px;color:#aaa;text-align:center;padding:4px 0;background:var(--dark);margin-top:-1px}
+.sync-badge.synced{color:#4CAF50}
+.sync-badge.syncing{color:var(--gold)}
+.sync-badge.error{color:var(--danger)}
 /* PRINT */
 #print-area{display:none}
 @media print{
   body>*{display:none!important}
   #print-area{display:block!important;font-family:Arial,sans-serif;color:#000;font-size:11pt}
-  .pa-header{background:#1A1A1A;color:#fff;padding:20px 24px;display:flex;justify-content:space-between;align-items:flex-start}
-  .pa-co-name{font-size:18pt;font-weight:700;color:#C9A84C;margin-bottom:4px}
+  .pa-header{background:#1A1A1A;color:#fff;padding:20px 24px;display:flex;justify-content:space-between;align-items:center}
+  .pa-logo{width:80px;height:80px;object-fit:contain}
+  .pa-co-block{flex:1;margin-left:16px}
+  .pa-co-name{font-size:16pt;font-weight:700;color:#C9A84C;margin-bottom:4px}
   .pa-co-sub{font-size:9pt;color:#aaa;letter-spacing:1px}
   .pa-co-contact{font-size:9pt;color:#bbb;margin-top:8px;line-height:1.7}
   .pa-doc-type{text-align:right}
@@ -311,6 +303,7 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
 <div id="pin-screen" class="screen active">
   <div>
     <div class="pin-logo">
+      <img src="LOGO_PLACEHOLDER" alt="Neway Security Logo">
       <div class="pin-logo-top">Protected Access</div>
       <div class="pin-logo-name">NEWAY SECURITY</div>
       <div class="pin-logo-sub">Invoice &amp; Quotation System</div>
@@ -324,17 +317,17 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
     </div>
     <div class="pin-error" id="pin-error"></div>
     <div class="pin-pad">
-      <button class="pin-btn" onclick="pinPress('1')">1</button>
-      <button class="pin-btn" onclick="pinPress('2')">2<div class="sub">ABC</div></button>
-      <button class="pin-btn" onclick="pinPress('3')">3<div class="sub">DEF</div></button>
-      <button class="pin-btn" onclick="pinPress('4')">4<div class="sub">GHI</div></button>
-      <button class="pin-btn" onclick="pinPress('5')">5<div class="sub">JKL</div></button>
-      <button class="pin-btn" onclick="pinPress('6')">6<div class="sub">MNO</div></button>
-      <button class="pin-btn" onclick="pinPress('7')">7<div class="sub">PQRS</div></button>
-      <button class="pin-btn" onclick="pinPress('8')">8<div class="sub">TUV</div></button>
-      <button class="pin-btn" onclick="pinPress('9')">9<div class="sub">WXYZ</div></button>
+      <button class="pin-btn" onclick="pinPress(\'1\')">1</button>
+      <button class="pin-btn" onclick="pinPress(\'2\')">2<div class="sub">ABC</div></button>
+      <button class="pin-btn" onclick="pinPress(\'3\')">3<div class="sub">DEF</div></button>
+      <button class="pin-btn" onclick="pinPress(\'4\')">4<div class="sub">GHI</div></button>
+      <button class="pin-btn" onclick="pinPress(\'5\')">5<div class="sub">JKL</div></button>
+      <button class="pin-btn" onclick="pinPress(\'6\')">6<div class="sub">MNO</div></button>
+      <button class="pin-btn" onclick="pinPress(\'7\')">7<div class="sub">PQRS</div></button>
+      <button class="pin-btn" onclick="pinPress(\'8\')">8<div class="sub">TUV</div></button>
+      <button class="pin-btn" onclick="pinPress(\'9\')">9<div class="sub">WXYZ</div></button>
       <button class="pin-btn" style="background:transparent;border-color:transparent"></button>
-      <button class="pin-btn" onclick="pinPress('0')">0</button>
+      <button class="pin-btn" onclick="pinPress(\'0\')">0</button>
       <button class="pin-btn del" onclick="pinDel()">&#x232B;</button>
     </div>
   </div>
@@ -343,16 +336,20 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
 <!-- APP SCREEN -->
 <div id="app-screen" class="screen">
   <div class="top-bar">
-    <div>
-      <div class="top-bar-logo">NEWAY SECURITY</div>
-      <div class="top-bar-sub">Invoice &amp; Quotation System</div>
+    <div class="top-bar-brand">
+      <img class="top-bar-logo-img" src="LOGO_PLACEHOLDER" alt="Logo">
+      <div class="top-bar-text">
+        <div class="top-bar-name">NEWAY SECURITY</div>
+        <div class="top-bar-sub">Invoice &amp; Quotation System</div>
+      </div>
     </div>
     <div class="top-bar-actions">
-      <button class="icon-btn" onclick="lockApp()">
+      <button class="icon-btn" onclick="lockApp()" title="Lock">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       </button>
     </div>
   </div>
+  <div class="sync-badge" id="sync-badge">&#9679; Connecting to shared counter...</div>
 
   <div class="page active" id="page-home"></div>
   <div class="page" id="page-new"></div>
@@ -360,19 +357,19 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
   <div class="page" id="page-clients"></div>
 
   <div class="tab-bar">
-    <div class="tab-item active" id="tab-home" onclick="showPage('home')">
+    <div class="tab-item active" id="tab-home" onclick="showPage(\'home\')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       Home
     </div>
-    <div class="tab-item" id="tab-new" onclick="showPage('new')">
+    <div class="tab-item" id="tab-new" onclick="showPage(\'new\')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
       New Doc
     </div>
-    <div class="tab-item" id="tab-history" onclick="showPage('history')">
+    <div class="tab-item" id="tab-history" onclick="showPage(\'history\')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
       History
     </div>
-    <div class="tab-item" id="tab-clients" onclick="showPage('clients')">
+    <div class="tab-item" id="tab-clients" onclick="showPage(\'clients\')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       Clients
     </div>
@@ -428,136 +425,183 @@ input,select,textarea{font-family:inherit;font-size:15px;outline:none}
 <div class="toast" id="toast"></div>
 
 <script>
-const CORRECT_PIN = '1234';
+const CORRECT_PIN = \'1234\';
+const LOGO_URI = \'LOGO_PLACEHOLDER\';
 const COMPANY = {
-  name:'NEWAY SECURITY (PTY) LTD',reg:'2018/200399/07',
-  address:'Stand No. 10111, Matsikitsane, R40 Main Road, Acornhoek 1360',
-  tel:'079 955 0 700 / 072 555 6 444',email:'info@newaysecurity.co.za',
-  web:'www.newaysecurity.co.za',bank:'FNB',accNo:'63079609344',
-  accHolder:'NEWAY SECURITY (PTY) LTD',branch:'261449',swift:'FIRNZAJJ'
+  name:\'NEWAY SECURITY (PTY) LTD\',reg:\'2018/200399/07\',
+  address:\'Stand No. 10111, Matsikitsane, R40 Main Road, Acornhoek 1360\',
+  tel:\'079 955 0 700 / 072 555 6 444\',email:\'info@newaysecurity.co.za\',
+  web:\'www.newaysecurity.co.za\',bank:\'FNB\',accNo:\'63079609344\',
+  accHolder:\'NEWAY SECURITY (PTY) LTD\',branch:\'261449\',swift:\'FIRNZAJJ\'
 };
 
-const SALESPERSONS = ['Thembi Malope','Max Seya','Peace Tibane'];
+const SALESPERSONS = [\'Thembi Malope\',\'Max Seya\',\'Peace Tibane\'];
 
 const SEED_CLIENTS = [
-  {id:'c001',name:'Dudu Mtshali',company:'Astrol Energy Plaza Management',phone:'082 350 6058 / 013 795 5942',email:'',address:'Acornhoek',seed:true},
-  {id:'c002',name:'Engen Bushbuckridge Service Station',company:'Engen Bushbuckridge Service Station',phone:'',email:'',address:'Bushbuckridge',seed:true},
-  {id:'c003',name:'OBC Acornhoek',company:'OBC Acornhoek',phone:'',email:'',address:'Acornhoek',seed:true},
-  {id:'c004',name:'OBC Dwarsloop',company:'OBC Dwarsloop',phone:'',email:'',address:'Dwarsloop',seed:true},
-  {id:'c005',name:'OBC Hazyview',company:'OBC Hazyview',phone:'',email:'',address:'Hazyview',seed:true},
-  {id:'c006',name:'Dwarsloop Phase 2 (B)',company:'Dwarsloop Phase 2 (B)',phone:'',email:'',address:'Dwarsloop',seed:true},
-  {id:'c007',name:'Dr Phidane',company:'Dr Phidane',phone:'',email:'',address:'',seed:true},
-  {id:'c008',name:'1360 Lifestyle',company:'1360 Lifestyle',phone:'',email:'',address:'Acornhoek 1360',seed:true},
-  {id:'c009',name:'Jubilee Church',company:'Jubilee Church',phone:'',email:'',address:'',seed:true},
-  {id:'c010',name:'Reti Primary School',company:'Reti Primary School',phone:'',email:'',address:'',seed:true},
-  {id:'c011',name:'SMT',company:'SMT',phone:'',email:'',address:'',seed:true},
+  {id:\'c001\',name:\'Dudu Mtshali\',company:\'Astrol Energy Plaza Management\',phone:\'082 350 6058 / 013 795 5942\',email:\'\',address:\'Acornhoek\',seed:true},
+  {id:\'c002\',name:\'Engen Bushbuckridge Service Station\',company:\'Engen Bushbuckridge Service Station\',phone:\'\',email:\'\',address:\'Bushbuckridge\',seed:true},
+  {id:\'c003\',name:\'OBC Acornhoek\',company:\'OBC Acornhoek\',phone:\'\',email:\'\',address:\'Acornhoek\',seed:true},
+  {id:\'c004\',name:\'OBC Dwarsloop\',company:\'OBC Dwarsloop\',phone:\'\',email:\'\',address:\'Dwarsloop\',seed:true},
+  {id:\'c005\',name:\'OBC Hazyview\',company:\'OBC Hazyview\',phone:\'\',email:\'\',address:\'Hazyview\',seed:true},
+  {id:\'c006\',name:\'Dwarsloop Phase 2 (B)\',company:\'Dwarsloop Phase 2 (B)\',phone:\'\',email:\'\',address:\'Dwarsloop\',seed:true},
+  {id:\'c007\',name:\'Dr Phidane\',company:\'Dr Phidane\',phone:\'\',email:\'\',address:\'\',seed:true},
+  {id:\'c008\',name:\'1360 Lifestyle\',company:\'1360 Lifestyle\',phone:\'\',email:\'\',address:\'Acornhoek 1360\',seed:true},
+  {id:\'c009\',name:\'Jubilee Church\',company:\'Jubilee Church\',phone:\'\',email:\'\',address:\'\',seed:true},
+  {id:\'c010\',name:\'Reti Primary School\',company:\'Reti Primary School\',phone:\'\',email:\'\',address:\'\',seed:true},
+  {id:\'c011\',name:\'SMT\',company:\'SMT\',phone:\'\',email:\'\',address:\'\',seed:true},
 ];
 
 const CATALOG = [
-  {cat:'Armed Response & Guarding',items:[
-    {name:'Armed Guard – Day Shift Supervisor',price:20000,unit:'month'},
-    {name:'Armed Guard – Day Shift',price:18000,unit:'month'},
-    {name:'Armed Guard – Night Shift Supervisor',price:22000,unit:'month'},
-    {name:'Armed Guard – Night Shift',price:19000,unit:'month'},
-    {name:'Armed Guard – Reliever',price:12000,unit:'month'},
-    {name:'Armed Guard (Rifle)',price:15500,unit:'month'},
-    {name:'Armed Guard (Handgun)',price:7500,unit:'month'},
-    {name:'Armed Guard – Daily Rate (Day)',price:750,unit:'day'},
-    {name:'Armed Guard – Daily Rate (Night)',price:1100,unit:'day'},
-    {name:'Armed Response & Patrol Vehicle',price:0,unit:'month'},
+  {cat:\'Armed Response & Guarding\',items:[
+    {name:\'Armed Guard \\u2013 Day Shift Supervisor\',price:20000,unit:\'month\'},
+    {name:\'Armed Guard \\u2013 Day Shift\',price:18000,unit:\'month\'},
+    {name:\'Armed Guard \\u2013 Night Shift Supervisor\',price:22000,unit:\'month\'},
+    {name:\'Armed Guard \\u2013 Night Shift\',price:19000,unit:\'month\'},
+    {name:\'Armed Guard \\u2013 Reliever\',price:12000,unit:\'month\'},
+    {name:\'Armed Guard (Rifle)\',price:15500,unit:\'month\'},
+    {name:\'Armed Guard (Handgun)\',price:7500,unit:\'month\'},
+    {name:\'Armed Guard \\u2013 Daily Rate (Day)\',price:750,unit:\'day\'},
+    {name:\'Armed Guard \\u2013 Daily Rate (Night)\',price:1100,unit:\'day\'},
+    {name:\'Armed Response & Patrol Vehicle\',price:0,unit:\'month\'},
   ]},
-  {cat:'Unarmed Security Guards',items:[
-    {name:'Unarmed Guard – Day Shift Supervisor',price:17000,unit:'month'},
-    {name:'Unarmed Guard – Day Shift',price:15000,unit:'month'},
-    {name:'Unarmed Guard – Night Shift Supervisor',price:18000,unit:'month'},
-    {name:'Unarmed Guard – Night Shift',price:16000,unit:'month'},
-    {name:'Unarmed Guard – Reliever',price:6000,unit:'month'},
-    {name:'Unarmed Guard – Daily Rate',price:500,unit:'day'},
+  {cat:\'Unarmed Security Guards\',items:[
+    {name:\'Unarmed Guard \\u2013 Day Shift Supervisor\',price:17000,unit:\'month\'},
+    {name:\'Unarmed Guard \\u2013 Day Shift\',price:15000,unit:\'month\'},
+    {name:\'Unarmed Guard \\u2013 Night Shift Supervisor\',price:18000,unit:\'month\'},
+    {name:\'Unarmed Guard \\u2013 Night Shift\',price:16000,unit:\'month\'},
+    {name:\'Unarmed Guard \\u2013 Reliever\',price:6000,unit:\'month\'},
+    {name:\'Unarmed Guard \\u2013 Daily Rate\',price:500,unit:\'day\'},
   ]},
-  {cat:'Graded Guards',items:[
-    {name:'Site Supervisor – Grade A (Day)',price:30000,unit:'month'},
-    {name:'Site Supervisor – Grade A (Night)',price:32000,unit:'month'},
-    {name:'Security Guard – Grade B (Day)',price:28000,unit:'month'},
-    {name:'Security Guard – Grade B (Night)',price:30000,unit:'month'},
-    {name:'Security Guard – Grade C (Day)',price:16500,unit:'month'},
-    {name:'Security Guard – Grade C (Night)',price:18500,unit:'month'},
-    {name:'Ad Hoc Security Guard',price:16500,unit:'month'},
+  {cat:\'Graded Guards\',items:[
+    {name:\'Site Supervisor \\u2013 Grade A (Day)\',price:30000,unit:\'month\'},
+    {name:\'Site Supervisor \\u2013 Grade A (Night)\',price:32000,unit:\'month\'},
+    {name:\'Security Guard \\u2013 Grade B (Day)\',price:28000,unit:\'month\'},
+    {name:\'Security Guard \\u2013 Grade B (Night)\',price:30000,unit:\'month\'},
+    {name:\'Security Guard \\u2013 Grade C (Day)\',price:16500,unit:\'month\'},
+    {name:\'Security Guard \\u2013 Grade C (Night)\',price:18500,unit:\'month\'},
+    {name:\'Ad Hoc Security Guard\',price:16500,unit:\'month\'},
   ]},
-  {cat:'Community Patrol',items:[
-    {name:'Protected Household (Community Patrol)',price:200,unit:'household/month'},
+  {cat:\'Community Patrol\',items:[
+    {name:\'Protected Household (Community Patrol)\',price:200,unit:\'household/month\'},
   ]},
-  {cat:'VIP Protection & Escort',items:[
-    {name:'VIP Protection (vehicle + 2 guards)',price:5500,unit:'day'},
-    {name:'Armed Guards with Rifles (escort)',price:15500,unit:'guard/month'},
-    {name:'Vehicle Escort – SUV',price:4.50,unit:'km'},
-    {name:'Vehicle Escort – Standard',price:2.80,unit:'km'},
+  {cat:\'VIP Protection & Escort\',items:[
+    {name:\'VIP Protection (vehicle + 2 guards)\',price:5500,unit:\'day\'},
+    {name:\'Armed Guards with Rifles (escort)\',price:15500,unit:\'guard/month\'},
+    {name:\'Vehicle Escort \\u2013 SUV\',price:4.50,unit:\'km\'},
+    {name:\'Vehicle Escort \\u2013 Standard\',price:2.80,unit:\'km\'},
   ]},
-  {cat:'Alarm Installation (Once-Off)',items:[
-    {name:'Response Alarm System (Residential)',price:9500,unit:'once-off'},
-    {name:'Alarm System (Small Commercial)',price:22000,unit:'once-off'},
-    {name:'Alarm System (Large Commercial / Mall)',price:40000,unit:'once-off'},
-    {name:'Combined Alarm + CCTV System',price:40319,unit:'once-off'},
-    {name:'GSM Panic Button',price:6999,unit:'once-off'},
-    {name:'Panic Button (Institutional)',price:5500,unit:'once-off'},
-    {name:'Alarm Upgrade / Extra Detection',price:6000,unit:'once-off'},
-    {name:'Alarm Repair / Callout',price:450,unit:'callout'},
-    {name:'Travel per Kilometre',price:4.50,unit:'km'},
+  {cat:\'Alarm Installation (Once-Off)\',items:[
+    {name:\'Response Alarm System (Residential)\',price:9500,unit:\'once-off\'},
+    {name:\'Alarm System (Small Commercial)\',price:22000,unit:\'once-off\'},
+    {name:\'Alarm System (Large Commercial / Mall)\',price:40000,unit:\'once-off\'},
+    {name:\'Combined Alarm + CCTV System\',price:40319,unit:\'once-off\'},
+    {name:\'GSM Panic Button\',price:6999,unit:\'once-off\'},
+    {name:\'Panic Button (Institutional)\',price:5500,unit:\'once-off\'},
+    {name:\'Alarm Upgrade / Extra Detection\',price:6000,unit:\'once-off\'},
+    {name:\'Alarm Repair / Callout\',price:450,unit:\'callout\'},
+    {name:\'Travel per Kilometre\',price:4.50,unit:\'km\'},
   ]},
-  {cat:'Alarm Monitoring & Response (Monthly)',items:[
-    {name:'Alarm Monitoring + Armed Response',price:1100,unit:'month'},
-    {name:'Alarm Monitoring (Residential)',price:850,unit:'month'},
-    {name:'Armed Reaction Only',price:360,unit:'month'},
-    {name:'Panic Button Monthly Fee',price:1200,unit:'month'},
-    {name:'Radio Monthly Fee',price:400,unit:'month'},
-    {name:'Additional Call-Out',price:450,unit:'call'},
+  {cat:\'Alarm Monitoring & Response (Monthly)\',items:[
+    {name:\'Alarm Monitoring + Armed Response\',price:1100,unit:\'month\'},
+    {name:\'Alarm Monitoring (Residential)\',price:850,unit:\'month\'},
+    {name:\'Armed Reaction Only\',price:360,unit:\'month\'},
+    {name:\'Panic Button Monthly Fee\',price:1200,unit:\'month\'},
+    {name:\'Radio Monthly Fee\',price:400,unit:\'month\'},
+    {name:\'Additional Call-Out\',price:450,unit:\'call\'},
   ]},
-  {cat:'CCTV & Cameras (Once-Off)',items:[
-    {name:'CCTV Surveillance Kit (4–8 channel)',price:8999,unit:'once-off'},
-    {name:'PTZ WiFi Camera – Standard',price:2999,unit:'once-off'},
-    {name:'PTZ WiFi Camera – Premium',price:4999,unit:'once-off'},
-    {name:'Combined Alarm + CCTV System',price:40319,unit:'once-off'},
+  {cat:\'CCTV & Cameras (Once-Off)\',items:[
+    {name:\'CCTV Surveillance Kit (4\\u20138 channel)\',price:8999,unit:\'once-off\'},
+    {name:\'PTZ WiFi Camera \\u2013 Standard\',price:2999,unit:\'once-off\'},
+    {name:\'PTZ WiFi Camera \\u2013 Premium\',price:4999,unit:\'once-off\'},
+    {name:\'Combined Alarm + CCTV System\',price:40319,unit:\'once-off\'},
   ]},
-  {cat:'Event Security',items:[
-    {name:'Event Security Guard (Armed / Unarmed)',price:700,unit:'guard/day'},
-    {name:'Event Security – Crowd Control',price:130000,unit:'event'},
-    {name:'Bouncers',price:3000,unit:'event'},
-    {name:'Weekend Security Package (2 guards x 3 days)',price:13000,unit:'package'},
+  {cat:\'Event Security\',items:[
+    {name:\'Event Security Guard (Armed / Unarmed)\',price:700,unit:\'guard/day\'},
+    {name:\'Event Security \\u2013 Crowd Control\',price:130000,unit:\'event\'},
+    {name:\'Bouncers\',price:3000,unit:\'event\'},
+    {name:\'Weekend Security Package (2 guards x 3 days)\',price:13000,unit:\'package\'},
   ]},
-  {cat:'Security Training',items:[
-    {name:'Security Training – General',price:500,unit:'person'},
-    {name:'Grades E–C Training (EDC)',price:2000,unit:'person'},
-    {name:'Armed Response Training',price:2300,unit:'person'},
-    {name:'PSIRA Application (new registration)',price:450,unit:'person'},
+  {cat:\'Security Training\',items:[
+    {name:\'Security Training \\u2013 General\',price:500,unit:\'person\'},
+    {name:\'Grades E\\u2013C Training (EDC)\',price:2000,unit:\'person\'},
+    {name:\'Armed Response Training\',price:2300,unit:\'person\'},
+    {name:\'PSIRA Application (new registration)\',price:450,unit:\'person\'},
   ]},
-  {cat:'Additional Services',items:[
-    {name:'Pest Control',price:10500,unit:'once-off'},
-    {name:'Radio Replacement',price:1500,unit:'once-off'},
-    {name:'Radio Monthly Fee',price:400,unit:'month'},
-    {name:'Venue Booking Fee',price:1000,unit:''},
-    {name:'Travel per Kilometre',price:5.00,unit:'km'},
-    {name:'Security Officer – General',price:14000,unit:'month'},
-    {name:'Reliever',price:6000,unit:'month'},
+  {cat:\'Additional Services\',items:[
+    {name:\'Pest Control\',price:10500,unit:\'once-off\'},
+    {name:\'Radio Replacement\',price:1500,unit:\'once-off\'},
+    {name:\'Radio Monthly Fee\',price:400,unit:\'month\'},
+    {name:\'Venue Booking Fee\',price:1000,unit:\'\'},
+    {name:\'Travel per Kilometre\',price:5.00,unit:\'km\'},
+    {name:\'Security Officer \\u2013 General\',price:14000,unit:\'month\'},
+    {name:\'Reliever\',price:6000,unit:\'month\'},
   ]},
 ];
 
-let nextInv = parseInt(localStorage.getItem('neway_nextInv') || '1000');
-let nextQuo = parseInt(localStorage.getItem('neway_nextQuo') || '7204');
-let docs = JSON.parse(localStorage.getItem('neway_docs') || '[]');
+// ─── SHARED COUNTER VIA PERSISTENT STORAGE ────────────────────────────────────
+// nextInv and nextQuo are stored as SHARED so all users/devices see the same number
+let nextInv = 1000;
+let nextQuo = 7204;
+let countersSynced = false;
+
+function setSyncBadge(state, msg) {
+  const el = document.getElementById(\'sync-badge\');
+  if (!el) return;
+  el.className = \'sync-badge \' + state;
+  el.textContent = msg;
+}
+
+async function loadSharedCounters() {
+  try {
+    setSyncBadge(\'syncing\', \'\\u25CF Syncing document numbers...\');
+    const [ri, rq] = await Promise.all([
+      window.storage.get(\'neway_nextInv\', true),
+      window.storage.get(\'neway_nextQuo\', true)
+    ]);
+    nextInv = ri ? parseInt(ri.value) : 1000;
+    nextQuo = rq ? parseInt(rq.value) : 7204;
+    countersSynced = true;
+    setSyncBadge(\'synced\', \'\\u25CF Numbers in sync \\u2014 INV-\' + String(nextInv).padStart(4,\'0\') + \' / QUO-\' + String(nextQuo).padStart(4,\'0\'));
+    // refresh home if visible
+    if (document.getElementById(\'page-home\').classList.contains(\'active\')) renderHome();
+  } catch(e) {
+    // Fall back to localStorage if storage API unavailable
+    nextInv = parseInt(localStorage.getItem(\'neway_nextInv\') || \'1000\');
+    nextQuo = parseInt(localStorage.getItem(\'neway_nextQuo\') || \'7204\');
+    setSyncBadge(\'error\', \'\\u25CF Offline mode \\u2014 numbers may not be shared\');
+  }
+}
+
+async function saveSharedCounters() {
+  try {
+    await Promise.all([
+      window.storage.set(\'neway_nextInv\', String(nextInv), true),
+      window.storage.set(\'neway_nextQuo\', String(nextQuo), true)
+    ]);
+    setSyncBadge(\'synced\', \'\\u25CF Numbers saved \\u2014 INV-\' + String(nextInv).padStart(4,\'0\') + \' / QUO-\' + String(nextQuo).padStart(4,\'0\'));
+  } catch(e) {
+    localStorage.setItem(\'neway_nextInv\', nextInv);
+    localStorage.setItem(\'neway_nextQuo\', nextQuo);
+  }
+}
+// ──────────────────────────────────────────────────────────────────────────────
+
+let docs = JSON.parse(localStorage.getItem(\'neway_docs\') || \'[]\');
 let currentDoc = null;
 let docTypeChosen = false;
 
 function loadClients() {
-  const stored = JSON.parse(localStorage.getItem('neway_clients') || '[]');
+  const stored = JSON.parse(localStorage.getItem(\'neway_clients\') || \'[]\');
   const seedIds = SEED_CLIENTS.map(c => c.id);
   const userClients = stored.filter(c => !seedIds.includes(c.id));
   return [...SEED_CLIENTS, ...userClients];
 }
 function saveClients(clients) {
   const userClients = clients.filter(c => !c.seed);
-  localStorage.setItem('neway_clients', JSON.stringify(userClients));
+  localStorage.setItem(\'neway_clients\', JSON.stringify(userClients));
 }
 
-let pinBuffer = '';
+let pinBuffer = \'\';
 function pinPress(d) {
   if (pinBuffer.length >= 4) return;
   pinBuffer += d;
@@ -565,109 +609,113 @@ function pinPress(d) {
   if (pinBuffer.length === 4) {
     setTimeout(() => {
       if (pinBuffer === CORRECT_PIN) {
-        document.getElementById('pin-screen').classList.remove('active');
-        document.getElementById('app-screen').classList.add('active');
+        document.getElementById(\'pin-screen\').classList.remove(\'active\');
+        document.getElementById(\'app-screen\').classList.add(\'active\');
+        loadSharedCounters();
         renderHome();
       } else {
-        document.getElementById('pin-error').textContent = 'Incorrect PIN. Try again.';
-        pinBuffer = '';
+        document.getElementById(\'pin-error\').textContent = \'Incorrect PIN. Try again.\';
+        pinBuffer = \'\';
         updatePinDots();
-        setTimeout(() => document.getElementById('pin-error').textContent = '', 2000);
+        setTimeout(() => document.getElementById(\'pin-error\').textContent = \'\', 2000);
       }
     }, 120);
   }
 }
 function pinDel() { pinBuffer = pinBuffer.slice(0,-1); updatePinDots(); }
 function updatePinDots() {
-  for (let i=0;i<4;i++) document.getElementById('d'+i).className='pin-dot'+(i<pinBuffer.length?' filled':'');
+  for (let i=0;i<4;i++) document.getElementById(\'d\'+i).className=\'pin-dot\'+(i<pinBuffer.length?\' filled\':\'\');
 }
 function lockApp() {
-  pinBuffer=''; updatePinDots();
-  document.getElementById('pin-error').textContent='';
-  document.getElementById('app-screen').classList.remove('active');
-  document.getElementById('pin-screen').classList.add('active');
+  pinBuffer=\'\'; updatePinDots();
+  document.getElementById(\'pin-error\').textContent=\'\';
+  document.getElementById(\'app-screen\').classList.remove(\'active\');
+  document.getElementById(\'pin-screen\').classList.add(\'active\');
 }
 
 function showPage(name) {
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab-item').forEach(t=>t.classList.remove('active'));
-  document.getElementById('page-'+name).classList.add('active');
-  document.getElementById('tab-'+name).classList.add('active');
-  if(name==='home') renderHome();
-  if(name==='new') renderNewPage();
-  if(name==='history') renderHistory();
-  if(name==='clients') renderClients();
+  document.querySelectorAll(\'.page\').forEach(p=>p.classList.remove(\'active\'));
+  document.querySelectorAll(\'.tab-item\').forEach(t=>t.classList.remove(\'active\'));
+  document.getElementById(\'page-\'+name).classList.add(\'active\');
+  document.getElementById(\'tab-\'+name).classList.add(\'active\');
+  if(name===\'home\') renderHome();
+  if(name===\'new\') renderNewPage();
+  if(name===\'history\') renderHistory();
+  if(name===\'clients\') renderClients();
 }
 
-function fmt(n){return'R'+Number(n).toLocaleString('en-ZA',{minimumFractionDigits:2,maximumFractionDigits:2});}
-function today(){const d=new Date();return d.getDate().toString().padStart(2,'0')+'/'+(d.getMonth()+1).toString().padStart(2,'0')+'/'+d.getFullYear();}
-function greet(){const h=new Date().getHours();return h<12?'morning':h<17?'afternoon':'evening';}
+function fmt(n){return\'R\'+Number(n).toLocaleString(\'en-ZA\',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function today(){const d=new Date();return d.getDate().toString().padStart(2,\'0\')+\'/\'+(d.getMonth()+1).toString().padStart(2,\'0\')+\'/\'+d.getFullYear();}
+function greet(){const h=new Date().getHours();return h<12?\'morning\':h<17?\'afternoon\':\'evening\';}
 
 function renderHome() {
   const recent = [...docs].reverse().slice(0,8);
-  document.getElementById('page-home').innerHTML = `
+  document.getElementById(\'page-home\').innerHTML = `
     <div class="home-greeting">
       <h2>Good ${greet()}</h2>
       <p>Neway Security &middot; ${today()}</p>
     </div>
     <div class="action-grid">
-      <div class="action-card gold" onclick="startDoc('invoice')">
+      <div class="action-card gold" onclick="startDoc(\'invoice\')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         <div class="ac-label">New Invoice</div>
-        <div class="ac-sub">INV-${String(nextInv).padStart(4,'0')}</div>
+        <div class="ac-sub">INV-${String(nextInv).padStart(4,\'0\')}</div>
       </div>
-      <div class="action-card" onclick="startDoc('quotation')">
+      <div class="action-card" onclick="startDoc(\'quotation\')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <div class="ac-label">New Quote</div>
-        <div class="ac-sub">QUO-${String(nextQuo).padStart(4,'0')}</div>
+        <div class="ac-sub">QUO-${String(nextQuo).padStart(4,\'0\')}</div>
       </div>
     </div>
     <div class="section-title">Recent documents</div>
     <div class="recent-list">
       ${recent.length===0?`<div class="empty-state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="40" height="40" style="stroke:#ccc"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg><p>No documents yet</p></div>`:
-      recent.map(d=>`<div class="recent-item" onclick="viewDoc('${d.id}')">
+      recent.map(d=>`<div class="recent-item" onclick="viewDoc(\'${d.id}\')">
         <div class="ri-left">
           <div class="ri-num">${d.number}</div>
-          <div class="ri-name">${d.client||'—'}</div>
+          <div class="ri-name">${d.client||\'\\u2014\'}</div>
           <div class="ri-date">${d.date}</div>
         </div>
         <div class="ri-right">
           <div class="ri-amount">${fmt(d.total)}</div>
-          <div class="ri-type ${d.type==='invoice'?'badge-inv':'badge-quo'}">${d.type==='invoice'?'INV':'QUO'}</div>
+          <div class="ri-type ${d.type===\'invoice\'?\'badge-inv\':\'badge-quo\'}">${d.type===\'invoice\'?\'INV\':\'QUO\'}</div>
         </div>
-      </div>`).join('')}
+      </div>`).join(\'\')}
     </div>`;
 }
 
 function startDoc(type) {
-  const num = type==='invoice'
-    ? 'INV-'+String(nextInv).padStart(4,'0')
-    : 'QUO-'+String(nextQuo).padStart(4,'0');
-  currentDoc = {type,number:num,date:today(),client:'',clientId:'',subject:'',salesperson:'',items:[],footnote:''};
-  docTypeChosen = true;
-  showPage('new');
+  // Refresh counters from shared storage before assigning a number
+  loadSharedCounters().then(() => {
+    const num = type===\'invoice\'
+      ? \'INV-\'+String(nextInv).padStart(4,\'0\')
+      : \'QUO-\'+String(nextQuo).padStart(4,\'0\');
+    currentDoc = {type,number:num,date:today(),client:\'\',clientId:\'\',subject:\'\',salesperson:\'\',items:[],footnote:\'\'};
+    docTypeChosen = true;
+    showPage(\'new\');
+  });
 }
 
 function renderNewPage() {
   if (!docTypeChosen || !currentDoc) {
-    document.getElementById('page-new').innerHTML = `
+    document.getElementById(\'page-new\').innerHTML = `
       <div style="font-size:18px;font-weight:600;margin-bottom:6px">New Document</div>
       <div style="font-size:13px;color:var(--text3);margin-bottom:20px">Choose what you want to create</div>
       <div class="type-picker">
-        <div class="type-pick-btn inv" onclick="startDoc('invoice')">
+        <div class="type-pick-btn inv" onclick="startDoc(\'invoice\')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           <div class="type-pick-info">
             <div class="type-pick-label">Invoice</div>
             <div class="type-pick-sub">Bill a client for completed work or services</div>
-            <div class="type-pick-num">Next: INV-${String(nextInv).padStart(4,'0')}</div>
+            <div class="type-pick-num">Next: INV-${String(nextInv).padStart(4,\'0\')}</div>
           </div>
         </div>
-        <div class="type-pick-btn quo" onclick="startDoc('quotation')">
+        <div class="type-pick-btn quo" onclick="startDoc(\'quotation\')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           <div class="type-pick-info">
             <div class="type-pick-label">Quotation</div>
             <div class="type-pick-sub">Send a price quote to a prospective client</div>
-            <div class="type-pick-num">Next: QUO-${String(nextQuo).padStart(4,'0')}</div>
+            <div class="type-pick-num">Next: QUO-${String(nextQuo).padStart(4,\'0\')}</div>
           </div>
         </div>
       </div>`;
@@ -678,15 +726,15 @@ function renderNewPage() {
 
 function renderDocForm() {
   const d = currentDoc;
-  const isInv = d.type==='invoice';
-  document.getElementById('page-new').innerHTML = `
+  const isInv = d.type===\'invoice\';
+  document.getElementById(\'page-new\').innerHTML = `
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
       <button onclick="backToTypePicker()" style="background:none;color:var(--gold);font-size:13px;font-weight:600;padding:0">&#8592; Back</button>
       <div style="flex:1">
         <div style="font-size:18px;font-weight:700">${d.number}</div>
         <div style="font-size:12px;color:var(--text3)">${d.date} &middot; ${d.type.toUpperCase()}</div>
       </div>
-      <div style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;${isInv?'background:#FFF3E0;color:#E65100':'background:#E8F5E9;color:#1B5E20'}">${isInv?'INVOICE':'QUOTATION'}</div>
+      <div style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;${isInv?\'background:#FFF3E0;color:#E65100\':\'background:#E8F5E9;color:#1B5E20\'}">${isInv?\'INVOICE\':\'QUOTATION\'}</div>
     </div>
     <div class="form-section">
       <div class="form-section-title">Client details</div>
@@ -698,12 +746,12 @@ function renderDocForm() {
         </div>
       </div>
       <div class="field"><label>Subject / Description</label>
-        <input type="text" placeholder="e.g. Guarding Services – June 2026" id="f-subject" value="${d.subject}" oninput="currentDoc.subject=this.value"></div>
+        <input type="text" placeholder="e.g. Guarding Services \\u2013 June 2026" id="f-subject" value="${d.subject}" oninput="currentDoc.subject=this.value"></div>
       <div class="row2">
         <div class="field"><label>Salesperson</label>
           <select id="f-sales" onchange="currentDoc.salesperson=this.value">
             <option value="">-- Select --</option>
-            ${SALESPERSONS.map(s=>`<option value="${s}" ${d.salesperson===s?'selected':''}>${s}</option>`).join('')}
+            ${SALESPERSONS.map(s=>`<option value="${s}" ${d.salesperson===s?\'selected\':\'\'}>` + s + \'</option>\').join(\'\')}
           </select>
         </div>
         <div class="field"><label>Date</label>
@@ -731,7 +779,7 @@ function renderDocForm() {
     </div>
     <button class="gen-btn" onclick="generateDoc()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-      Generate ${isInv?'Invoice':'Quotation'}
+      Generate ${isInv?\'Invoice\':\'Quotation\'}
     </button>
     <div style="height:16px"></div>`;
   updateTotals();
@@ -745,23 +793,23 @@ function backToTypePicker() {
 
 function clientInput(val) {
   currentDoc.client = val;
-  currentDoc.clientId = '';
-  const box = document.getElementById('client-suggestions');
-  if (!val.trim()) { box.style.display='none'; return; }
+  currentDoc.clientId = \'\';
+  const box = document.getElementById(\'client-suggestions\');
+  if (!val.trim()) { box.style.display=\'none\'; return; }
   const clients = loadClients();
   const q = val.toLowerCase();
   const matches = clients.filter(c=>
     c.name.toLowerCase().includes(q) ||
     (c.company && c.company.toLowerCase().includes(q))
   ).slice(0,6);
-  if (!matches.length) { box.style.display='none'; return; }
+  if (!matches.length) { box.style.display=\'none\'; return; }
   box.innerHTML = matches.map(c=>`
-    <div class="client-sug-item" onclick="selectClient('${c.id}')">
+    <div class="client-sug-item" onclick="selectClient(\'${c.id}\')">
       <div class="client-sug-name">${c.name}</div>
-      ${c.company && c.company!==c.name?`<div class="client-sug-sub">${c.company}</div>`:''}
-      ${c.phone?`<div class="client-sug-sub">${c.phone}</div>`:''}
-    </div>`).join('');
-  box.style.display='block';
+      ${c.company && c.company!==c.name?`<div class="client-sug-sub">${c.company}</div>`:\'\'}
+      ${c.phone?`<div class="client-sug-sub">${c.phone}</div>`:\'\'}
+    </div>`).join(\'\');
+  box.style.display=\'block\';
 }
 
 function selectClient(id) {
@@ -770,20 +818,20 @@ function selectClient(id) {
   if(!c) return;
   currentDoc.client = c.company || c.name;
   currentDoc.clientId = id;
-  document.getElementById('f-client').value = c.company || c.name;
-  document.getElementById('client-suggestions').style.display='none';
+  document.getElementById(\'f-client\').value = c.company || c.name;
+  document.getElementById(\'client-suggestions\').style.display=\'none\';
 }
 
-document.addEventListener('click', function(e) {
-  const box = document.getElementById('client-suggestions');
-  if (box && !box.contains(e.target) && e.target.id !== 'f-client') {
-    box.style.display = 'none';
+document.addEventListener(\'click\', function(e) {
+  const box = document.getElementById(\'client-suggestions\');
+  if (box && !box.contains(e.target) && e.target.id !== \'f-client\') {
+    box.style.display = \'none\';
   }
 });
 
 function renderLineItems() {
   if (!currentDoc || !currentDoc.items.length)
-    return '<div style="text-align:center;color:var(--text3);font-size:13px;padding:12px 0">No items yet — tap below to add</div>';
+    return \'<div style="text-align:center;color:var(--text3);font-size:13px;padding:12px 0">No items yet \\u2014 tap below to add</div>\';
   return currentDoc.items.map((item,i)=>`
     <div class="line-item" id="li-${i}">
       <div class="li-top">
@@ -805,11 +853,11 @@ function renderLineItems() {
         </div>
       </div>
       <div class="li-total-line">Line total: <span id="lt-${i}">${fmt(item.qty*item.price)}</span></div>
-    </div>`).join('');
+    </div>`).join(\'\');
 }
 
 function refreshLineItems() {
-  const c = document.getElementById('line-items-container');
+  const c = document.getElementById(\'line-items-container\');
   if(c){ c.innerHTML=renderLineItems(); updateTotals(); }
 }
 function removeItem(i){ currentDoc.items.splice(i,1); refreshLineItems(); }
@@ -817,34 +865,34 @@ function changeQty(i,d){ currentDoc.items[i].qty=Math.max(1,currentDoc.items[i].
 function setQty(i,v){ currentDoc.items[i].qty=Math.max(1,parseInt(v)||1); refreshLineItems(); }
 function setPrice(i,v){
   currentDoc.items[i].price=parseFloat(v)||0;
-  const el=document.getElementById('lt-'+i);
+  const el=document.getElementById(\'lt-\'+i);
   if(el) el.textContent=fmt(currentDoc.items[i].qty*currentDoc.items[i].price);
   updateTotals();
 }
 function getTotal(){ return !currentDoc?0:currentDoc.items.reduce((s,it)=>s+it.qty*it.price,0); }
 function updateTotals(){
   const t=getTotal();
-  const s=document.getElementById('tot-sub'), tt=document.getElementById('tot-total');
+  const s=document.getElementById(\'tot-sub\'), tt=document.getElementById(\'tot-total\');
   if(s) s.textContent=fmt(t);
   if(tt) tt.textContent=fmt(t);
   if(currentDoc) currentDoc.total=t;
 }
 
 function openDrawer(){
-  document.getElementById('drawer-overlay').classList.add('open');
-  document.getElementById('catalog-drawer').classList.add('open');
-  document.getElementById('catalog-search').value='';
-  filterCatalog('');
-  setTimeout(()=>document.getElementById('catalog-search').focus(),350);
+  document.getElementById(\'drawer-overlay\').classList.add(\'open\');
+  document.getElementById(\'catalog-drawer\').classList.add(\'open\');
+  document.getElementById(\'catalog-search\').value=\'\';
+  filterCatalog(\'\');
+  setTimeout(()=>document.getElementById(\'catalog-search\').focus(),350);
 }
 function closeDrawer(){
-  document.getElementById('drawer-overlay').classList.remove('open');
-  document.getElementById('catalog-drawer').classList.remove('open');
+  document.getElementById(\'drawer-overlay\').classList.remove(\'open\');
+  document.getElementById(\'catalog-drawer\').classList.remove(\'open\');
 }
 
 function filterCatalog(q){
   const s=q.toLowerCase();
-  let html='';
+  let html=\'\';
   CATALOG.forEach(group=>{
     const items=s?group.items.filter(it=>it.name.toLowerCase().includes(s)||group.cat.toLowerCase().includes(s)):group.items;
     if(!items.length) return;
@@ -858,7 +906,7 @@ function filterCatalog(q){
       </div>`;
     });
   });
-  document.getElementById('catalog-list').innerHTML=html||'<div style="text-align:center;padding:24px;color:var(--text3);font-size:13px">No results</div>';
+  document.getElementById(\'catalog-list\').innerHTML=html||\'<div style="text-align:center;padding:24px;color:var(--text3);font-size:13px">No results</div>\';
 }
 
 function addItemByIndex(gIdx,iIdx){
@@ -869,35 +917,37 @@ function addItemByIndex(gIdx,iIdx){
   setTimeout(()=>refreshLineItems(),300);
 }
 
-function generateDoc(){
-  if(!currentDoc.client.trim()){showToast('Please enter a client name');return;}
-  if(!currentDoc.items.length){showToast('Add at least one line item');return;}
+async function generateDoc(){
+  if(!currentDoc.client.trim()){showToast(\'Please enter a client name\');return;}
+  if(!currentDoc.items.length){showToast(\'Add at least one line item\');return;}
   currentDoc.total=getTotal();
   currentDoc.id=Date.now().toString();
   const clients=loadClients();
   if(!currentDoc.clientId && currentDoc.client.trim()){
     const exists=clients.find(c=>c.name.toLowerCase()===currentDoc.client.toLowerCase()||c.company.toLowerCase()===currentDoc.client.toLowerCase());
     if(!exists){
-      const nc={id:'c'+Date.now(),name:currentDoc.client,company:currentDoc.client,phone:'',email:'',address:'',seed:false};
+      const nc={id:\'c\'+Date.now(),name:currentDoc.client,company:currentDoc.client,phone:\'\',email:\'\',address:\'\',seed:false};
       clients.push(nc);
       saveClients(clients);
     }
   }
   docs.push({...currentDoc});
-  localStorage.setItem('neway_docs',JSON.stringify(docs));
-  if(currentDoc.type==='invoice'){nextInv++;localStorage.setItem('neway_nextInv',nextInv);}
-  else{nextQuo++;localStorage.setItem('neway_nextQuo',nextQuo);}
+  localStorage.setItem(\'neway_docs\',JSON.stringify(docs));
+  // Increment and save the shared counter
+  if(currentDoc.type===\'invoice\'){ nextInv++; }
+  else{ nextQuo++; }
+  await saveSharedCounters();
   buildPrintArea(currentDoc);
-  document.getElementById('preview-summary').innerHTML=`
+  document.getElementById(\'preview-summary\').innerHTML=`
     <div style="text-align:center;padding:8px 0 16px">
       <div style="font-size:22px;font-weight:700">${currentDoc.number}</div>
       <div style="font-size:14px;color:var(--text2);margin-top:4px">${currentDoc.client}</div>
       <div style="font-size:24px;font-weight:700;margin-top:12px;color:var(--gold)">${fmt(currentDoc.total)}</div>
-      <div style="font-size:12px;color:var(--text3);margin-top:4px">${currentDoc.items.length} line item${currentDoc.items.length>1?'s':''} &middot; ${currentDoc.date}</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:4px">${currentDoc.items.length} line item${currentDoc.items.length>1?\'s\':\'\'} &middot; ${currentDoc.date}</div>
     </div>`;
-  document.getElementById('preview-modal').classList.add('open');
+  document.getElementById(\'preview-modal\').classList.add(\'open\');
 }
-function closePreview(){ document.getElementById('preview-modal').classList.remove('open'); }
+function closePreview(){ document.getElementById(\'preview-modal\').classList.remove(\'open\'); }
 function printDoc(){
   closePreview();
   setTimeout(()=>window.print(),200);
@@ -911,16 +961,17 @@ function buildPrintArea(d){
     <td style="text-align:center">${it.qty}</td>
     <td style="text-align:right">${fmt(it.price)}</td>
     <td style="text-align:right">${fmt(it.qty*it.price)}</td>
-  </tr>`).join('');
-  document.getElementById('print-area').innerHTML=`
+  </tr>`).join(\'\');
+  document.getElementById(\'print-area\').innerHTML=`
     <div class="pa-header">
-      <div>
+      <img class="pa-logo" src="${LOGO_URI}" alt="Neway Security Logo">
+      <div class="pa-co-block">
         <div class="pa-co-name">${COMPANY.name}</div>
         <div class="pa-co-sub">REG NO: ${COMPANY.reg}</div>
         <div class="pa-co-contact">Tel: ${COMPANY.tel}<br>Email: ${COMPANY.email}<br>Web: ${COMPANY.web}<br>${COMPANY.address}</div>
       </div>
       <div class="pa-doc-type">
-        <div class="pa-doc-title">${d.type==='invoice'?'INVOICE':'QUOTATION'}</div>
+        <div class="pa-doc-title">${d.type===\'invoice\'?\'INVOICE\':\'QUOTATION\'}</div>
         <div class="pa-doc-num">${d.number}</div>
         <div class="pa-doc-date">Date: ${d.date}</div>
       </div>
@@ -929,15 +980,15 @@ function buildPrintArea(d){
       <div class="pa-meta">
         <div class="pa-meta-box">
           <div class="pa-meta-label">Bill to</div>
-          <div class="pa-meta-val">${d.client||'—'}</div>
-          ${d.subject?`<div style="font-size:10pt;color:#666;margin-top:4px">${d.subject}</div>`:''}
+          <div class="pa-meta-val">${d.client||\'\\u2014\'}</div>
+          ${d.subject?`<div style="font-size:10pt;color:#666;margin-top:4px">${d.subject}</div>`:\'\'}
         </div>
         <div class="pa-meta-box">
           <div class="pa-meta-label">Details</div>
           <div style="font-size:10pt;line-height:1.8">
-            <div><b>Salesperson:</b> ${d.salesperson||'—'}</div>
+            <div><b>Salesperson:</b> ${d.salesperson||\'\\u2014\'}</div>
             <div><b>Payment terms:</b> Due on receipt</div>
-            ${d.type==='quotation'?'<div><b>Valid for:</b> 30 days</div>':''}
+            ${d.type===\'quotation\'?\'<div><b>Valid for:</b> 30 days</div>\':\'\'}
           </div>
         </div>
       </div>
@@ -960,8 +1011,8 @@ function buildPrintArea(d){
           <div class="pa-bank-row"><span class="pa-bank-key">Swift Code</span><span class="pa-bank-val">${COMPANY.swift}</span></div>
         </div>
       </div>
-      ${d.footnote?`<div class="pa-footnote">${d.footnote}</div>`:''}
-      ${d.type==='quotation'?'<div class="pa-footnote">A 70% deposit is required upon placing an order. Remainder upon completion. All prices excl. VAT. Valid 30 days.</div>':''}
+      ${d.footnote?`<div class="pa-footnote">${d.footnote}</div>`:\'\'}
+      ${d.type===\'quotation\'?\'<div class="pa-footnote">A 70% deposit is required upon placing an order. Remainder upon completion. All prices excl. VAT. Valid 30 days.</div>\':\'\'}
     </div>
     <div class="pa-footer">
       <span>${COMPANY.name}</span>
@@ -972,61 +1023,61 @@ function buildPrintArea(d){
 
 function renderHistory(){
   const sorted=[...docs].reverse();
-  document.getElementById('page-history').innerHTML=`
+  document.getElementById(\'page-history\').innerHTML=`
     <div style="font-size:18px;font-weight:600;margin-bottom:16px">All documents <span style="color:var(--text3);font-size:14px;font-weight:400">(${docs.length})</span></div>
-    ${sorted.length===0?'<div class="empty-state"><p>No documents yet</p></div>':
+    ${sorted.length===0?\'<div class="empty-state"><p>No documents yet</p></div>\':
     sorted.map(d=>`
       <div class="doc-card">
         <div class="doc-header">
           <div><div class="doc-num">${d.number}</div><div class="doc-date">${d.date}</div></div>
-          <div class="doc-badge ${d.type==='invoice'?'badge-inv':'badge-quo'}">${d.type==='invoice'?'INVOICE':'QUOTATION'}</div>
+          <div class="doc-badge ${d.type===\'invoice\'?\'badge-inv\':\'badge-quo\'}">${d.type===\'invoice\'?\'INVOICE\':\'QUOTATION\'}</div>
         </div>
-        <div class="doc-client">${d.client||'—'}</div>
-        ${d.subject?`<div class="doc-subject">${d.subject}</div>`:''}
+        <div class="doc-client">${d.client||\'\\u2014\'}</div>
+        ${d.subject?`<div class="doc-subject">${d.subject}</div>`:\'\'}
         <div class="doc-items-preview">
-          ${d.items.slice(0,3).map(it=>`<div class="dip-row"><span>${it.qty}&times; ${it.name}</span><span>${fmt(it.qty*it.price)}</span></div>`).join('')}
-          ${d.items.length>3?`<div class="dip-row" style="color:var(--text3)"><span>+${d.items.length-3} more</span></div>`:''}
+          ${d.items.slice(0,3).map(it=>`<div class="dip-row"><span>${it.qty}&times; ${it.name}</span><span>${fmt(it.qty*it.price)}</span></div>`).join(\'\')}
+          ${d.items.length>3?`<div class="dip-row" style="color:var(--text3)"><span>+${d.items.length-3} more</span></div>`:\'\'}
         </div>
         <div class="doc-total-row">
           <span class="doc-total-label">Total</span>
           <span class="doc-total-val">${fmt(d.total)}</span>
         </div>
         <div class="doc-actions">
-          <button class="doc-action-btn secondary" onclick="deleteDoc('${d.id}')">
+          <button class="doc-action-btn secondary" onclick="deleteDoc(\'${d.id}\')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>Delete
           </button>
-          <button class="doc-action-btn primary" onclick="reprintDoc('${d.id}')">
+          <button class="doc-action-btn primary" onclick="reprintDoc(\'${d.id}\')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>Reprint
           </button>
         </div>
-      </div>`).join('')}`;
+      </div>`).join(\'\')}`;
 }
 
 function viewDoc(id){
   const d=docs.find(x=>x.id===id); if(!d) return;
   buildPrintArea(d);
-  document.getElementById('preview-summary').innerHTML=`
+  document.getElementById(\'preview-summary\').innerHTML=`
     <div style="text-align:center;padding:8px 0 16px">
       <div style="font-size:22px;font-weight:700">${d.number}</div>
       <div style="font-size:14px;color:var(--text2);margin-top:4px">${d.client}</div>
       <div style="font-size:24px;font-weight:700;margin-top:12px;color:var(--gold)">${fmt(d.total)}</div>
     </div>`;
-  document.getElementById('preview-modal').classList.add('open');
+  document.getElementById(\'preview-modal\').classList.add(\'open\');
 }
 function reprintDoc(id){
   const d=docs.find(x=>x.id===id); if(!d) return;
   buildPrintArea(d); setTimeout(()=>window.print(),100);
 }
 function deleteDoc(id){
-  if(!confirm('Delete this document?')) return;
+  if(!confirm(\'Delete this document?\')) return;
   docs=docs.filter(x=>x.id!==id);
-  localStorage.setItem('neway_docs',JSON.stringify(docs));
-  renderHistory(); showToast('Document deleted');
+  localStorage.setItem(\'neway_docs\',JSON.stringify(docs));
+  renderHistory(); showToast(\'Document deleted\');
 }
 
 function renderClients(){
   const clients=loadClients();
-  document.getElementById('page-clients').innerHTML=`
+  document.getElementById(\'page-clients\').innerHTML=`
     <div style="font-size:18px;font-weight:600;margin-bottom:16px">Clients <span style="color:var(--text3);font-size:14px;font-weight:400">(${clients.length})</span></div>
     <button class="add-client-btn" onclick="openClientModal()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -1035,41 +1086,41 @@ function renderClients(){
     ${clients.map(c=>`
       <div class="client-card">
         <div class="client-card-name">${c.name}</div>
-        ${c.company&&c.company!==c.name?`<div class="client-card-company">${c.company}</div>`:''}
+        ${c.company&&c.company!==c.name?`<div class="client-card-company">${c.company}</div>`:\'\'}
         <div class="client-card-contact">
-          ${c.phone?`&#128222; ${c.phone}<br>`:''}
-          ${c.email?`&#9993; ${c.email}<br>`:''}
-          ${c.address?`&#128205; ${c.address}`:''}
+          ${c.phone?`&#128222; ${c.phone}<br>`:\'\'}
+          ${c.email?`&#9993; ${c.email}<br>`:\'\'}
+          ${c.address?`&#128205; ${c.address}`:\'\'}
         </div>
-        <div class="client-card-tag ${c.seed?'existing':''}">${c.seed?'Existing client':'New client'}</div>
-      </div>`).join('')}`;
+        <div class="client-card-tag ${c.seed?\'existing\':\'\'}">${c.seed?\'Existing client\':\'New client\'}</div>
+      </div>`).join(\'\')}`;
 }
 
-function openClientModal(){ document.getElementById('client-modal').classList.add('open'); }
-function closeClientModal(){ document.getElementById('client-modal').classList.remove('open'); }
+function openClientModal(){ document.getElementById(\'client-modal\').classList.add(\'open\'); }
+function closeClientModal(){ document.getElementById(\'client-modal\').classList.remove(\'open\'); }
 function saveNewClient(){
-  const name=document.getElementById('cm-name').value.trim();
-  if(!name){showToast('Client name is required');return;}
+  const name=document.getElementById(\'cm-name\').value.trim();
+  if(!name){showToast(\'Client name is required\');return;}
   const clients=loadClients();
   const nc={
-    id:'c'+Date.now(),name,
-    company:document.getElementById('cm-company').value.trim()||name,
-    phone:document.getElementById('cm-phone').value.trim(),
-    email:document.getElementById('cm-email').value.trim(),
-    address:document.getElementById('cm-address').value.trim(),
+    id:\'c\'+Date.now(),name,
+    company:document.getElementById(\'cm-company\').value.trim()||name,
+    phone:document.getElementById(\'cm-phone\').value.trim(),
+    email:document.getElementById(\'cm-email\').value.trim(),
+    address:document.getElementById(\'cm-address\').value.trim(),
     seed:false
   };
   clients.push(nc); saveClients(clients);
   closeClientModal();
   renderClients();
-  showToast('Client saved');
-  ['cm-name','cm-company','cm-phone','cm-email','cm-address'].forEach(id=>document.getElementById(id).value='');
+  showToast(\'Client saved\');
+  [\'cm-name\',\'cm-company\',\'cm-phone\',\'cm-email\',\'cm-address\'].forEach(id=>document.getElementById(id).value=\'\');
 }
 
 function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg; t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2500);
+  const t=document.getElementById(\'toast\');
+  t.textContent=msg; t.classList.add(\'show\');
+  setTimeout(()=>t.classList.remove(\'show\'),2500);
 }
 </script>
 </body>
